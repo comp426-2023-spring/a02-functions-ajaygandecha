@@ -30,18 +30,18 @@ let latitude = 0;
 let longitude = 0;
 
 // Parse latitude using -n and -s arguments
-if("n" in args) {
+if("n" in args && args["n"] != undefined) {
     latitude = args["n"];
 }
-else if("s" in args) {
+else if("s" in args && args["s"] != undefined) {
     latitude = -args["s"];
 }
 
 // Parse longitude using -e and -w arguments
-if("e" in args) {
+if("e" in args && args["e"] != undefined) {
     longitude = args["e"];
 }
-else if("w" in args) {
+else if("w" in args && args["w"] != undefined) {
     longitude = -args["w"];
 }
 
