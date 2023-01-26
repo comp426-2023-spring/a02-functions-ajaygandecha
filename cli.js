@@ -48,11 +48,11 @@ else if("w" in args) {
 // Check to ensure that latitude and longitude are in the valid range
 if(latitude === undefined || Math.abs(latitude) > 90) {
     console.log("Latitude must be in range");
-    process.exit(1);
+    process.exit(0);
 }
 if(longitude === undefined || Math.abs(longitude) > 180) {
     console.log("Longitude must be in range");
-    process.exit(1);
+    process.exit(0);
 }
 
 // Parse timezone
