@@ -29,6 +29,8 @@ Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
 let latitude = 0;
 let longitude = 0;
 
+console.log(args);
+
 // Parse latitude using -n and -s arguments
 if("n" in args && args["n"] != undefined) {
     latitude = args["n"];
