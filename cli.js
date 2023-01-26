@@ -26,33 +26,31 @@ Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
 }
 
 // Parse latitude and longitude
-let latitude = 0;
-let longitude = 0;
-
-console.log(args);
+let latitude = undefined;
+let longitude = undefined;
 
 // Parse latitude using -n and -s arguments
-if("n" in args && args["n"] != undefined) {
+if("n" in args) {
     latitude = args["n"];
 }
-else if("s" in args && args["s"] != undefined) {
+else if("s" in args) {
     latitude = -args["s"];
 }
 
 // Parse longitude using -e and -w arguments
-if("e" in args && args["e"] != undefined) {
+if("e" in args) {
     longitude = args["e"];
 }
-else if("w" in args && args["w"] != undefined) {
+else if("w" in args) {
     longitude = -args["w"];
 }
 
 // Check to ensure that latitude and longitude are in the valid range
-if(Math.abs(latitude) > 90) {
+if(latitude === undefined || Math.abs(latitude) > 90) {
     console.log("Latitude must be in range");
     process.exit(1);
 }
-if(Math.abs(longitude) > 180) {
+if(longitude === undefined || Math.abs(longitude) > 180) {
     console.log("Longitude must be in range");
     process.exit(1);
 }
