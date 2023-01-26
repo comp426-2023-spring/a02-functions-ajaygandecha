@@ -45,6 +45,16 @@ else if("w" in args) {
     longitude = -args["w"];
 }
 
+// Check to ensure that latitude and longitude are in the valid range
+if(Math.abs(latitude) > 90) {
+    console.log("Latitude must be in range");
+    process.exit(1);
+}
+if(Math.abs(longitude) > 180) {
+    console.log("Longitude must be in range");
+    process.exit(1);
+}
+
 // Parse timezone
 // Find timezone from system
 let timezone = moment.tz.guess();
